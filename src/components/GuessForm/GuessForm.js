@@ -3,7 +3,7 @@ import React from 'react';
 function GuessForm() {
   const [guess, setGuess] = React.useState('');
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     console.info({guess});
     setGuess('');
@@ -12,7 +12,7 @@ function GuessForm() {
   return (
     <form onSubmit={handleSubmit} className="guess-input-wrapper">
       <label htmlFor="guess-input">Enter guess:</label>
-      <input pattern="\w{5,5}" required id="guess-input" type="text" value={guess} onChange={() => setGuess((event.target.value).toUpperCase())} />
+      <input pattern="\w{5,5}" required id="guess-input" type="text" value={guess} onChange={(event) => setGuess((event.target.value).toUpperCase())} />
     </form>
   );
 }
