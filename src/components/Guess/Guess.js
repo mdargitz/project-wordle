@@ -1,12 +1,8 @@
 import React from 'react';
 import { range } from '../../utils';
 
-function Guess({guessList, row}) {
+function Guess({word}) {
   const cellRangeArr = range(5);
-  let word = "";
-  if (guessList[row]) {
-    word = guessList[row].value;
-  }
 
   return (
     <p className="guess">

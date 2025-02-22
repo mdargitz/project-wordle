@@ -8,7 +8,8 @@ function GuessList({guessList}) {
   return (
     <div className="guess-results">
       {rowRangeArr.map((row, index) => {
-        return <Guess key={index} guessList={guessList} row={row} />
+        let word = guessList[row] ? guessList[row].value : "";
+        return <Guess key={index} word={word} />
       })}
     </div>
   );
