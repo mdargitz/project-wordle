@@ -5,8 +5,11 @@ function GuessForm({handleAddToGuessList}) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleAddToGuessList(event, {value: guess, id: crypto.randomUUID()});
-    console.info({guess});
+
+    handleAddToGuessList(event, {
+        value: guess, 
+        id: crypto.randomUUID()
+      });
     setGuess('');
   }
 
